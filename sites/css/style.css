@@ -4,7 +4,7 @@ h2
 }
 body
 {
-    background-color: blue;
+    background-color:aqua;
     margin: 0;
     padding: 0;
     display: flex;
@@ -202,3 +202,84 @@ article
     padding: 50px; 
     margin: 10px;
 }
+.container
+{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;   
+    border: 2px solid orange;
+
+
+}
+.button-mode
+{
+    text-align: center;
+    margin-top: 20px;
+}
+label {
+    
+    margin-bottom: 0px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.form-row  {
+    margin-bottom: 10px;
+   
+ 
+}
+.form-input[type="radio"],
+.form-input[type="checkbox"] 
+{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.center-button {
+    display: block;
+    margin: 0 auto;
+    
+}
+input
+{
+background-color: yellow;
+border-radius: 30px;
+box-sizing: border-box; 
+}
+select
+{
+    background-color: yellow;
+    border-radius: 30px; 
+}
+input[type="text"] {
+    width: 200px; 
+    
+}
+input[type="email"] {
+    width: 200px;
+ 
+}
+input[type="tel"] {
+    width: 200px; 
+}
+.ya
+{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+
+
