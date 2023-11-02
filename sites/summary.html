@@ -15,7 +15,7 @@
    
     <header>
         <div class="wrapper">
-        <h2>Веб-технологии </h2>
+        <h2 class="erdem">Веб-технологии </h2>
         </div>
         <div class="wrapper">
         <img src="images/logo-2.jpg" alt="Логотип" width="200">
@@ -31,10 +31,10 @@
         </nav>
         </div>
     </header>
-    <main class="padding-text">
+    <main class="erdem">
         <div>
             <div class="wrapper table2">
-            <h1>Резюме</h1>
+            <h1 >Резюме</h1>
             </div>
             <div class="wrapper table">
             <table border="1" >
@@ -90,7 +90,7 @@
         </div>
         </div>
     </table>
-        
+    <button id="themeButton">Сменить тему</button>
              
     </main>
 
@@ -105,5 +105,45 @@
         </div>
             </div>
     </footer>
+    <script>
+        function f3()
+        {
+            event.target.classList.add("tyt");
+        }
+        let list_no_select = Array.from(document.getElementsByClassName("erdem"));
+        list_no_select.forEach((element) => {
+            element.addEventListener("click", f3);
+        });
+        document.getElementsByClassName("erdem")[0].addEventListener("click",f3);
+        document.getElementsByClassName("erdem")[1].addEventListener("click",f3);
+        document.getElementsByClassName("erdem")[2].addEventListener("click",f3);
+        document.getElementsByClassName("erdem")[3].addEventListener("click",f3);
+        document.getElementsByClassName("erdem")[4].addEventListener("click",f3);
+    </script>
+
+    <script>
+        const themeButton = document.getElementById('themeButton');
+        const body = document.body;
+
+        themeButton.addEventListener('click', toggleTheme);
+
+        function toggleTheme() {
+            body.classList.toggle('dark-theme');
+        }
+    </script>
+    <script>
+        function block() 
+        {
+            const tytElements = document.querySelectorAll(".tyt");
+            tytElements.forEach((element) => {
+                element.classList.remove("tyt");
+            });
+            event.target.classList.add("tyt");
+        }
+        const allElements = document.querySelectorAll("*");
+        allElements.forEach((item) => {
+            item.addEventListener("click", block);
+        });
+    </script>
 </body>
 </html>

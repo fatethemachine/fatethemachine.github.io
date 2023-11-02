@@ -10,16 +10,25 @@
             text-shadow: 2px 2px 4px;
         }
             </style>
+            <script>
+                function f1()
+                {
+                    document.getElementById('lorem-text').style.color='yellow';
+                }
+            </script>
 
 </head>
 <body class="body-class">
         <h1>Добро пожаловать</h1>
         <div class="reg-form">
         <div class="reg2-form"></div>
+        <div id="lorem-text" onclick="f1()">  
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolorem rerum architecto accusantium soluta doloremque.
-            <a href ="https://music.yandex.ru/home" target="_blank">
+            
+            <a href ="" target="_blank">
             <button onclick="yandex.ru" class="custom-button">Подробнее</button>
         </a> 
+        </div>
         </div>
 </body>
 </html>

@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2015</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" id="theme">
 </head>
-<main class="ya">
-<textarea style="width:300px; height: 80px;" id="area" placeholder="Напишите сообщение здесь"></textarea>
-<br>
-<button onclick="localStorage.removeItem('area');area.value=''">Очистить</button>
-<script>
-    area.value = localStorage.getItem('area');
-    area.oninput = () => {
-      localStorage.setItem('area', area.value)
-    };
-</script>
-</main>
-</html>
+<body class="body1">
+  <main class="ya">
+    <div class="wrapper">
+   
+  <textarea style="width:300px; height: 80px;" id="area" placeholder="Напишите сообщение здесь"></textarea>
+  <br>
+  <button onclick="localStorage.removeItem('area');area.value=''">Очистить</button>
+  <script>
+      area.value = localStorage.getItem('area');
+      area.oninput = () => {
+        localStorage.setItem('area', area.value)
+      };
+    </script>
+  </main>
+  </html>
+  
+</body>
 
