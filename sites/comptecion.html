@@ -11,6 +11,12 @@
     }
 
         </style>
+        <style >
+            .for-my-block
+            {
+                background-color: beige;
+            }
+        </style>
     
 
 </head>
@@ -31,9 +37,100 @@
             </ul>
         </nav>
         </div>
+      
     </header>
+
+      
+        </script>
+    
+          
+        <script>
+            function addBlock() {
+    const content = document.querySelector('.content');
+
+    // Создаем новый элемент article
+    const newArticle = document.createElement('article');
+
+    // Создаем поля ввода для времени, заголовка и информации
+    newArticle.innerHTML = `
+        <div class="block_information">
+            <input type="text" placeholder="Введите время" id="timeInput">
+            <input type="text" placeholder="Введите заголовок" id="titleInput">
+            <hr class="hr-line">
+            <input type="text" placeholder="Введите информацию" id="infoInput">
+        </div>
+        <div >
+            <input type="file" id="forFile" accept="image/*">
+          
+        </div>
+    `;
+
+    // Вставляем новый блок
+    content.appendChild(newArticle);
+
+    // Очищаем поля ввода
+    document.getElementById('timeInput').value = '';
+    document.getElementById('titleInput').value = '';
+    document.getElementById('infoInput').value = '';
+
+    const forFile = document.getElementById('forFile'); // Получаем элемент для загрузки файла
+    forFile.addEventListener('change', function() {
+        let selectedFile = forFile.files[0];
+
+        // Создаем элемент изображения
+        let img = document.createElement('img');
+        img.src = window.URL.createObjectURL(selectedFile);
+
+        // Добавляем изображение в блок__author
+        const blockAuthor = newArticle.querySelector('.block__author');
+        blockAuthor.appendChild(img);
+    });
+}
+
+function generateBlock() {
+            const content = document.querySelector('.content');
+            const newArticle = document.createElement('article');
+
+            const timeInput = document.getElementById('timeInput').value;
+            const titleInput = document.getElementById('titleInput').value;
+            const infoInput = document.getElementById('infoInput').value;
+
+            // Создаем элемент изображения
+            const img = document.createElement('img');
+            const forFile = document.getElementById('forFile').files[0];
+            img.src = window.URL.createObjectURL(forFile);
+
+            // Заполняем блок данными из полей ввода и добавляем изображение
+            newArticle.innerHTML = `
+                <div class="block_information">
+                    <h6>${timeInput}</h6>
+                    <h4>${titleInput}</h4>
+                    <hr class="hr-line">
+                    <p>${infoInput}</p>
+                </div>
+                <div class="block__author">
+                    <img src="${img.src}" width="50">
+                    <p>Ангаев Эрдэм</p>
+                </div>
+            `;
+
+            // Вставляем новый блок в контейнер с классом "content"
+            content.appendChild(newArticle);
+
+            // Очищаем поля ввода
+            document.getElementById('timeInput').value = '';
+            document.getElementById('titleInput').value = '';
+            document.getElementById('infoInput').value = '';
+            document.getElementById('forFile').value = '';
+        }
+    </script>
+    
+    <div class="button-container">
+        <button onclick="addBlock()">Добавить блок</button>
+        <button onclick="generateBlock()">Сгенерировать блок</button>
+    </div>  
     <main>
-        <div class="content__wrapper main__content">
+        <div class="content__wrapper main__content" id="content">
             <div class="content">
                 <div class="content__block">
                     <article>
@@ -75,16 +172,14 @@
                                 <p>Ангаев Эрдэм</p>
                             </div>
                         </article>
-                        
-                
             </div>
                 </div>
             </div>
                     </article>
-                </div>
-                      
+                </div>          
     
     </main>
+
 
     <footer >
         <div class="wrapper flex-between-center">
